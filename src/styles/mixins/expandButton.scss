@@ -1,0 +1,32 @@
+@mixin expandButton($dir, $size) {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+
+  $colour: $colour_black;
+
+  $borderTop: $size solid transparent;
+  $borderRight: $size solid transparent;
+  $borderBottom: $size solid transparent;
+  $borderLeft: $size solid transparent;
+
+  @if($dir == 'up') {
+    $borderTop: none;
+    $borderBottom: $size solid $colour;
+  } @else if ($dir == 'down') {
+    $borderBottom: none;
+    $borderTop: $size solid $colour;
+  } @else if ($dir == 'left') {
+    $borderLeft: none;
+    $borderRight: $size solid $colour;
+  } @else if ($dir == 'right') {
+    $borderRight: none;
+    $borderLeft: $size solid $colour;
+  }
+
+  border-top: $borderTop;
+  border-bottom: $borderBottom;
+  border-left: $borderLeft;
+  border-right: $borderRight;
+}

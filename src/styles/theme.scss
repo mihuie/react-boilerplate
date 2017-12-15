@@ -1,0 +1,49 @@
+// @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
+@import './base';
+@import './common/animations';
+@import './common/themeOverride';
+@import './common/buttons';
+@import './common/dialogue';
+@import './common/icons';
+@import './common/layout';
+@import './common/typography';
+@import './common/ui';
+
+html,
+body {
+  overflow: hidden;
+}
+
+#app {
+  // overflow-x: hidden;
+}
+
+// TODO: ADD MEDIA QUERY FOR PHONES
+
+@media only screen and (max-device-width: 1000px) {
+  .main {
+    max-width: 100%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.text-button {
+  min-height: 50px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.visible_span {
+  color: #959595;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.circle {
+  border-radius: 50%;
+}

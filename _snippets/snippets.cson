@@ -1,0 +1,765 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.source.scss':
+  'Header Comment':
+    'prefix': 'zch'
+    'body': """/**************************************************
+    * $1
+    **************************************************/
+    """
+
+
+'.source.js':
+  'Redux View':
+    'prefix': 'rdv'
+    'body': """import React from 'react'; // eslint-disable-line
+    import PropTypes from 'prop-types';
+
+    import './style.scss';
+
+    const View = ({
+      prop
+    }) => {
+      return (
+        <div className="_COMPONENT_">
+          $1
+        </div>
+      );
+    };
+
+    /*
+    View.propTypes = {
+      _PROP_: PropTypes.object.isRequired,
+      _METHOD_: PropTypes.func.isRequired,
+    };
+    */
+
+    export default View;
+
+
+    """
+
+   'Redux View Component':
+     'prefix': 'rdvc'
+     'body': """import React from 'react'; // eslint-disable-line
+
+        import './style.scss';
+        export default class View extends React.Component {
+          constructor() {
+            super();
+          }
+
+          componentWillMount() {
+
+          }
+
+          componentDidMount() {
+
+          }
+
+          componentWillReceiveProps(newProps) {
+
+          }
+
+          shouldComponentUpdate() {
+            return true;
+          }
+
+          componentWillUpdate() {
+
+          }
+
+          componentDidUpdate() {
+
+          }
+
+          componentWillUnmount() {
+
+          }
+
+          render() {
+            const {
+              prop,
+            } = this.props;
+
+            return (
+              <div className="_COMPONENT_">
+                $1
+              </div>
+            );
+          }
+        }
+     """
+
+  'Redux Container':
+    'prefix': 'rdc'
+    'body': """import { connect } from 'react-redux';
+       import { bindActionCreators } from 'redux';
+
+       import * as actions from './actions';
+       import View from './view';
+
+       export const mapStateToProps = (state, ownProps) => {
+         return {
+           $1prop: null,
+         };
+       };
+
+       const boundActions = dispatch => bindActionCreators(actions, dispatch);
+       export default connect(mapStateToProps, boundActions)(View);
+
+      """
+
+  'Redux Action Creator':
+    'prefix': 'rda'
+    'body': """export const simpleAction = value => ({
+      type: 'ACTION_TYPE',
+      value
+    });
+    $1
+    export const compositeAction = ({param}) => (dispatch, getState) => {
+      const formState = getState().form;
+      dispatch(simpleAction({param}));
+      dispatch(simpleAction({param: formState.foo}));
+    };
+
+
+      """
+
+  'JSX Method':
+    'prefix': 'jsxm'
+    'body': """{(() => {
+      $1
+    })()}
+    """
+
+  'JSX Map List':
+    'prefix': 'jsxmap'
+    'body': """{$1ARRAY.map((data, index) => (
+        <ELEMENT key={index} data={data}/>
+      ))}
+    """
+
+  'JSX If':
+    'prefix': 'jsxif'
+    'body': """{(() => {
+      if ($1) {
+        return (
+          $2<div/>
+        );
+      }
+    })()}
+    """
+
+  'JSX If-Else':
+    'prefix': 'jsxife'
+    'body': """{(() => {
+      if ($1) {
+        return (
+          $2<div/>
+        );
+      } else {
+        return (
+          $3<div/>
+        );
+      }
+    })()}
+    """
+
+  'JSX Switch':
+    'prefix': 'jsswitch'
+    'body': """{(() => {
+      switch ($1) {
+      case $2:
+        return (
+          $2<div/>
+        );
+      default: return null;
+      }
+    })()}
+    """
+
+  'Component Spec':
+    'prefix': 'specc'
+    'body': """import React from 'react'; // eslint-disable-line
+    import chai, { expect } from 'chai'; // eslint-disable-line
+    import jsxChai from 'jsx-chai';
+    chai.use(jsxChai);
+
+    import { createRenderer } from 'react-addons-test-utils';
+
+    import { mapStateToProps, mapDispatchToProps} from './COMPONENT';
+    import COMPONENTView from './COMPONENTView';
+
+    describe('Component :: $1COMPONENT', function() {
+
+      describe('mapStateToProps', function () {
+        const state = {
+
+        };
+
+        const ownProps = {
+
+        };
+
+        const actual = mapStateToProps(state, ownProps);
+        const expected = {
+
+        };
+
+        // expect(actual).to.deep.equal(expected);
+
+      });
+
+      describe('mapDispatchToProps', function () {
+        const dispatch = null;
+
+        const ownProps = {};
+
+        const actual = mapDispatchToProps(dispatch, ownProps);
+
+      });
+
+      describe('view', function () {
+
+        let actual;
+        beforeEach(function () {
+          const renderer = createRenderer();
+          renderer.render(<COMPONENTView/>);
+          actual = renderer.getRenderOutput();
+        });
+
+      });
+
+    });
+    """
+
+  'Console Group':
+    'prefix': 'cg'
+    'body': """console.group('$1'); // eslint-disable-line
+    """
+
+  'Console Group End':
+    'prefix': 'cge'
+    'body': """console.groupEnd(); // eslint-disable-line
+    $1
+    """
+
+  'Const Method':
+    'prefix': 'cm'
+    'body': """const $1 = () => {
+      $2
+    };
+    """
+
+  'Const Method':
+    'prefix': 'ecm'
+    'body': """export const $1 = () => {
+      $2
+    };
+    """
+
+  'Promise':
+    'prefix': 'pro'
+    'body': """const promise = new Promise((resolve) => {
+        $1
+      });
+
+      return promise;
+    """
+
+  'Header Comment':
+    'prefix': 'zch'
+    'body': """/**************************************************
+    * $1
+    **************************************************/
+    """
+
+  'Expect Equal':
+    'prefix': 'expe'
+    'body': "expect($1).to.equal('$2');"
+
+  'Expect Deep Equal':
+    'prefix': 'expde'
+    'body': "expect($1).to.deep.equal(expected);"
+
+  'Unit Test':
+    'prefix': 'ut'
+    'body': """import { expect } from 'chai';
+
+    import $1ITEM from './ITEM';
+
+    describe('ITEM @current', () => {
+      $2
+    });
+    """
+
+  'Unit Test mapStateToProps':
+    'prefix': 'uts'
+    'body': """import React from 'react'; // eslint-disable-line
+    import chai, { expect } from 'chai'; // eslint-disable-line
+
+    import { testMapState } from '~/test/util/testUtils'; // eslint-disable-line
+    // import { mockGlobals } from '~/test/util/mock';
+    // mockGlobals();
+
+    import { mapStateToProps } from './index';
+
+    describe('COMPONENT :: mapStateToProps @current', function() {
+      $1
+      /**************************************************
+      * Store
+      **************************************************/
+      const getState = (({ _CONFIG_= false } = {}) => (
+        {
+          data: {
+
+          },
+
+          display: {
+
+          },
+
+          form: {
+            _CONFIG_
+          },
+
+        }
+      ));
+
+      /**************************************************
+      * Properties
+      **************************************************/
+      const getOwnProps = ({ _CONFIG_ = false } = {}) => {
+        return {};
+      };
+
+      /**************************************************
+      * Scenarios
+      **************************************************/
+      describe('scenarios', () => {
+        const scenarios = [
+          {
+            title: 'Initial state',
+            state: {
+              _STATE_PROP_: undefined,
+            },
+            ownProps: {
+              _OWN_PROP_: undefined,
+            },
+            expected: {
+              _PROP_: undefined,
+            }
+          },
+
+          {
+            title: 'Completed state',
+            state: {
+              _PROP_: true,
+            },
+            ownProps: {
+              _OWN_PROP_: true,
+            },
+            expected: {
+              _PROP_: true,
+            }
+          },
+        ];
+
+        testMapState({scenarios, getState, getOwnProps, mapStateToProps});
+        // testMapStateTypes({scenarios, getState, getOwnProps, mapStateToProps});
+
+      });
+
+    });
+
+    """
+
+  'Unit Test - Component Shallow':
+    'prefix': 'utc'
+    'body': """import React from 'react'; // eslint-disable-line
+    import { shallow, mount, render } from 'enzyme'; // eslint-disable-line
+    import chai, { expect } from 'chai'; // eslint-disable-line
+
+    import { confirmElements } from '~/test/util/testUtils';
+
+    import _COMPONENT_ from './index';
+
+    describe('_COMPONENT_ :: Component @current', function() {
+
+      const e = {
+        mainContainer: {selector: '.SELECTOR'},
+      };
+
+      let wrapper;
+      wrapper = shallow (
+        <_COMPONENT_/>
+      );
+
+      describe('rendering', () => {
+        it('renders', () => {
+          expect(wrapper).to.exist;
+        });
+
+        describe('renders expected elements', function () {
+          confirmElements({wrapper, elements: e});
+        });
+
+      });
+    });
+
+    """
+
+  'Unit Test - Component Full':
+    'prefix': 'utcf'
+    'body': """import React from 'react'; // eslint-disable-line
+    import { shallow, mount, render } from 'enzyme'; // eslint-disable-line
+    import chai, { expect } from 'chai'; // eslint-disable-line
+    import configureMockStore from 'redux-mock-store';
+    import { Provider } from 'react-redux';
+
+    import { confirmElements } from '../../test/util/testUtils';
+
+    import _REDUCER_ from '../reducers/_REDUCER_';
+
+    import _COMPONENT_ from './index';
+
+    describe('_COMPONENT_ :: Component @current', function() {
+      let mockStore = configureMockStore();
+      let wrapper, store;
+
+      let initialState = {
+        reducer: _REDUCER_(),
+      };
+
+      store = mockStore(initialState);
+
+      wrapper = mount (
+        <Provider store={store}><_COMPONENT_/></Provider>
+      );
+
+      describe('rendering', () => {
+        it('renders', () => {
+          expect(wrapper).to.be.ok;
+        });
+
+        describe('renders expected elements', function () {
+          const e = {
+            main: {name: 'main container', selector: '.login'},
+            title: {name: 'title', selector: '.text-title'},
+          };
+
+          confirmElements({wrapper, elements: e});
+        });
+
+      });
+    });
+
+    """
+
+  'Unit Test - Component View':
+    'prefix': 'utv'
+    'body': """import React from 'react'; // eslint-disable-line
+    import { shallow, mount, render } from 'enzyme'; // eslint-disable-line
+    import chai, { expect } from 'chai'; // eslint-disable-line
+    import sinon from 'sinon';
+
+    import { Provider } from 'react-redux';
+    import configureMockStore from 'redux-mock-store';
+    const mockStore = configureMockStore();
+
+    import { confirmElements } from '~/test/util/testUtils';
+
+    import $1_COMPONENT_ from './view';
+
+    describe('_COMPONENT_ :: View @current', function() {
+
+      /**************************************************
+      * Manifest
+      **************************************************/
+      const e = {
+        mainContainer: {selector: '._SELECTOR_'},
+      };
+
+      /**************************************************
+      * JSX
+      **************************************************/
+      const getJSX = props => <_COMPONENT_ {...props} />;
+      const getProvider = ({ store, props } = {}) => <Provider store={store}>{getJSX(props)}</Provider>;
+
+      /**************************************************
+      * Sinon Methods
+      **************************************************/
+      const methods = {
+        _METHOD_: () => {},
+      };
+
+      Object.keys(methods).map(key => sinon.spy(methods, key));
+
+      /**************************************************
+      * Mock Store
+      **************************************************/
+      const getStore = (({_CONFIG_= false}) => mockStore(
+        {
+          form: {
+            _CONFIG_
+          }
+        }
+      ));
+
+      /**************************************************
+      * Properties
+      **************************************************/
+      const getProps = ({_CONFIG_ = false} = {}) => {
+        let props = {
+          _CONFIG_,
+        };
+
+        Object.keys(methods).map(key => props[key] = methods[key]);
+
+        return props;
+      };
+
+
+      describe('rendering', () => {
+        const props = getProps({_CONFIG_: '_VALUE_'});
+        const wrapper = shallow(getJSX(props));
+
+        it('renders', () => {
+          expect(wrapper).to.exist;
+        });
+
+        describe('renders expected elements', function () {
+          confirmElements({wrapper, elements: e});
+        });
+
+      });
+
+      /*
+      describe('button', () => {
+        const props = getProps({_CONFIG_: '_VALUE_'});
+        const wrapper = mount(getJSX(props));
+
+        const btn = wrapper.find(e._ID_.selector);
+
+        it('calls "_METHOD_" with correct arguments', () => {
+          btn.simulate('click');
+          expect(methods._METHOD_.called).to.be.true;
+          expect(methods._METHOD_.getCall(0).args[0]._VALUE1_).to.equal('product1');
+        });
+
+        it('links to the _LINK_ page', () => {
+          expect(btn).to.have.attr('href', '/#/_LINK_');
+        });
+
+      });
+      */
+    });
+
+    """
+
+  'Unit Test Reducer':
+    'prefix': 'utr'
+    'body': """import chai, { expect } from 'chai'; // eslint-disable-line
+    import chaiSubset from 'chai-subset';
+    import {testReducer} from '../../test/util/testUtils';
+
+    chai.use(chaiSubset);
+
+    import $1REDUCER from './REDUCER';
+
+    describe('REDUCER reducer @current', () => {
+      const scenarios = [
+        {
+          state: {},
+          action: {type: 'ACTION_TYPE', value: 'value'},
+          expected: {key: 'value'}
+        },
+      ];
+
+      testReducer(REDUCER, scenarios);
+    });
+
+    """
+
+  'Unit Test Action':
+    'prefix': 'uta'
+    'body': """import { expect } from 'chai'; // eslint-disable-line
+
+    import { testActionSequences } from '~/test/util/testUtils.js';
+
+    import * as actions from './actions';
+
+    describe('$1COMPONENT :: actions @current', () => {
+
+      /**************************************************
+      * State
+      **************************************************/
+      const getState = ({name}) => ({
+        data: {},
+        display: {},
+        form: {},
+      });
+
+      /**************************************************
+      * Scenarios
+      **************************************************/
+      describe('scenarios', () => {
+        const scenarios = [
+          {
+            name: '_ACTION_',
+            action:() => actions._ACTION_({id: 'testID', value: 'testValue'}),
+            state: getState({
+
+            }),
+            expected: [
+              {type: '_ACTION_TYPE', id: 'testID', value: 'testValue'},
+              {type: '_ACTION_TYPE', id: 'testID', value: false},
+            ]
+          },
+        ];
+
+        testActionSequences(scenarios);
+      });
+    });
+
+    """
+
+  'Unit Test Composite Action':
+    'prefix': 'utac'
+    'body': """import { expect } from 'chai'; // eslint-disable-line
+    import configureMockStore from 'redux-mock-store';
+    import thunk from 'redux-thunk';
+
+    const middlewares = [ thunk ];
+    const mockStore = configureMockStore(middlewares);
+
+    import { confirmActions } from '~/test/util/testUtils.js';
+
+    import * as actions from './actions';
+
+    describe('_COMPONENT_ :: actions @current', () => {
+
+      /**************************************************
+      * Methods
+      **************************************************/
+      describe('methods', () => {
+        const methods = [
+          '_METHOD_',
+        ];
+        confirmActions({actions, methods});
+      });
+
+      /**************************************************
+      * Scenarios
+      **************************************************/
+      describe('scenarios', () => {
+        const scenarios = [
+          {
+            name: 'test_name',
+            action:() => actions.ACTION({data: 0}),
+            expected: {type: 'ACTION_TYPE', data: 0}
+          },
+        ];
+
+        testActions(scenarios);
+      });
+
+      /**************************************************
+      * Composite Actions
+      **************************************************/
+      describe('composite actions', () => {
+
+        it('dispatches the correct sequence of actions', () => {
+
+          const expectedActions = [
+            { type: 'ACTION_1', value: 'VALUE_1'},
+            { type: 'ACTION_2', value: 'VALUE_2'},
+          ];
+
+          const store = mockStore({});
+          store.dispatch(actions.openAccount({_PROP1_: 'value_1', _PROP2_: 'value_2'}));
+          expect(store.getActions()).to.deep.equal(expectedActions);
+
+          /*
+          // Asynchronous
+          return store.dispatch(actions._ACTION_({_PROP1_: 'value_1', _PROP2_: 'value_2'}))
+          .then(() => {
+            expect(store.getActions()).to.deep.equal(expectedActions);
+          });
+          */
+        });
+
+      });
+
+    });
+
+
+    """
+
+  'Reducer':
+    'prefix': 'red'
+    'body': """export default (state = {}, action = {}) => {
+      switch (action.type) {
+        case 'ACTION_TYPE':
+          return {
+            ...state,
+            data: action.data
+          };
+        default: return state;
+      }
+    };
+
+    """
+
+
+  'ESLint Disable Line':
+    'prefix': 'edl'
+    'body': "// eslint-disable-line"
+
+  'describe6':
+    'prefix': 'describe'
+    'body': """describe('$1', () => {
+      $2
+    });
+    """
+
+  'it':
+    'prefix': 'it6'
+    'body': """it('$1', () => {
+      $2
+    });
+    """
+
+  'cucumber step definition':
+    'prefix': 'cs'
+    'body': """const { client } = require('nightwatch-cucumber');
+    const { defineSupportCode } = require('cucumber');
+
+    defineSupportCode(({ Then }) => {
+      Then(/^$1Lorem_ipsum "(.*?)"$/, text => {
+        const page = client.page._pageID_();
+        return page._doSomething_(text);
+      });
+    });
+    """

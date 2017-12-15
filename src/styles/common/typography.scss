@@ -1,0 +1,386 @@
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+/* roboto-100 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url('./fonts/Roboto/roboto-v16-latin-100.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Thin'), local('Roboto-Thin'),
+  url('./fonts/Roboto/roboto-v16-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./fonts/Roboto/roboto-v16-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
+  url('./fonts/Roboto/roboto-v16-latin-100.woff') format('woff'), /* Modern Browsers */
+  url('./fonts/Roboto/roboto-v16-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('./fonts/Roboto/roboto-v16-latin-100.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-300 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./fonts/Roboto/roboto-v16-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Light'), local('Roboto-Light'),
+       url('./fonts/Roboto/roboto-v16-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/Roboto/roboto-v16-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/Roboto/roboto-v16-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/Roboto/roboto-v16-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/Roboto/roboto-v16-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Roboto/roboto-v16-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('./fonts/Roboto/roboto-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/Roboto/roboto-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/Roboto/roboto-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/Roboto/roboto-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/Roboto/roboto-v16-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/Roboto/roboto-v16-latin-500.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('./fonts/Roboto/roboto-v16-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/Roboto/roboto-v16-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/Roboto/roboto-v16-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/Roboto/roboto-v16-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/Roboto/roboto-v16-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 100,300,400,500;
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url('./icons/MaterialIcons-Regular.woff2') format('woff2'),
+  url('./icons/MaterialIcons-Regular.woff') format('woff'),
+  url('./icons/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+* {
+  @include font_default--normal;
+}
+
+
+/**************************************************
+* Font Block
+**************************************************/
+.text {
+
+  &-huge   {
+    @include font_default--light;
+    font-size: 112px;
+  }
+
+  &-headline {
+    @include text_headline;
+  }
+
+  &-title {
+    @include text_title;
+    margin-bottom: 18px;
+  }
+
+  &-titleOverlay {
+    @include font_default--bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: $colour_yellow;
+  }
+
+  &-large {
+    @include font_large;
+  }
+
+  &-high {
+    @include font_default--bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colour_black;
+  }
+
+  &-subhead {
+    @include font_subhead;
+  }
+
+  &-label {
+    @include font_default--normal;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colour_grey_pinkish;
+  }
+
+  &-low {
+    @include font_default--normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colour_grey_warm;
+  }
+
+  &-link {
+    @include font_default--normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colour_blue_secondary;
+  }
+
+  &-light {
+    @include text_light;
+  }
+
+  &-medium {
+    @include text_medium;
+  }
+
+  &-nav {
+    @include font_default--normal;
+    font-size: 14px;
+    color: $colour_blue_dark;
+
+    &.disabled {
+      color: $colour_grey_warm;
+    }
+  }
+
+  &-caption {
+    @include font_caption;
+  }
+
+  &-warningBox {
+    @include font_caption;
+    background-color: $colour_grey_background;
+    padding: 14px 28px 14px 48px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 23px;
+
+    &::before {
+      position: absolute;
+      font-family: 'Material Icons';
+      content: '\E160';
+      font-size: 25px;
+      color: $colour_red;
+      left: 15px;
+    }
+  }
+
+}
+
+.centre {
+  text-align: center;
+}
+
+.dark {
+  .text {
+    &-headline { color: $colour_yellow; }
+    &-title { color: $colour_yellow; }
+    &-large { color: $colour_white; }
+    &-high { color: $colour_white; }
+    &-subhead { color: $colour_yellow; }
+    &-low { color: $colour_grey; }
+    &-link { color: $colour_yellow; }
+    &-medium { color: $colour_white; }
+    &-caption { color: $colour_white; }
+  }
+}
+
+
+p {
+  @extend .text-medium;
+  line-height: 1.5em !important;
+  margin-bottom: 20px !important;
+}
+
+
+
+/**************************************************
+* Reset Headers
+**************************************************/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+strong {
+  @include font_default--bold;
+}
+
+/**************************************************
+* Text Elements
+**************************************************/
+.text {
+  &-header {
+    @include font_default--bold;
+    color: $colour_blue_primary;
+  }
+
+  // TODO: remove when ready
+  // &-title {
+  //   @include font_default--medium;
+  //   color: $colour_blue_secondary;
+  //   font-size: 1.5em;
+  // }
+
+  &-subTitle {
+    @include font_default--medium;
+    color: $colour_grey_warm;
+  }
+
+
+  &-center {
+    text-align: center;
+  }
+
+  &-error {
+    color: $colour_red !important;
+  }
+
+}
+
+.field-error {
+  color: $colour_red !important;
+  font-size: calc(1.2 * 10px);
+  &.normal {
+    font-size: 1em;
+  }
+}
+
+.headerBarLabel {
+  text-transform: uppercase;
+  font-size: 0.875em;
+  letter-spacing: 0.04em;
+}
+
+.dropdown-group {
+  >label {
+    font-size: calc(1.2 * 10px);
+  }
+}
+
+.fieldLabel {
+  @include font_subhead--label;
+}
+
+.required,
+[data-required='true']
+ {
+  &[data-invalid='true'] {
+    color: $colour_red;
+  }
+
+  display: flex;
+  align-items: center;
+  &::after {
+    content: '*';
+    font-size: 1.5em;
+    margin-left: 3px;
+    font-weight: normal;
+    color: $colour_red--bright;
+  }
+}
+
+[data-error='true'] {
+  color: $colour_red !important;
+}
+
+.heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+/**************************************************
+* Links
+**************************************************/
+.link {
+  &-help {
+    color: $colour_blue_primary;
+  }
+}
+
+/**************************************************
+* Callout Block
+**************************************************/
+.calloutBlock {
+  @include font_default--bold;
+  background-color: $colour_grey_pinkish;
+  color: $colour_grey_warm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 13px;
+  border-radius: 4px;
+
+  > * {
+    @include font_default--bold;
+  }
+
+  a {
+    color: $colour_blue_primary;
+    text-decoration: none;
+  }
+}
+
+.callout {
+  @include font_default--medium;
+  padding: 14px 17px;
+  border-radius: $borderRadius;
+  background-color: $colour_grey_background;
+
+  display: flex;
+  align-items: center;
+
+  &-check {
+    &::before {
+      @include icon('check_circle');
+      margin-right: 7px;
+      font-size: 28px;
+      color: $colour_green;
+    }
+  }
+}
+
+
+/**************************************************
+* Error
+**************************************************/
+.error-message {
+  @include font_default--medium;
+  color: $colour_red;
+  font-size: 16px;
+  border: 1px solid $colour_red;
+  border-radius: 4px;
+  padding: 10px 16px;
+  background-color: $colour_red--light;
+  margin-bottom: $gutter;
+}
+
+.warning-message {
+  background-color: $colour_blue_secondary;
+  color: $colour_white;
+  padding: 9px 16px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  a {
+    color: $colour_white;
+    text-decoration: underline;
+  }
+}
+
+a {
+  color: $colour_blue_secondary;
+}

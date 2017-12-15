@@ -1,0 +1,28 @@
+/**************************************************
+* Expandable
+**************************************************/
+.expandable {
+
+  &_container {
+    overflow: hidden;
+    transition: 0.25s;
+    max-height: 0;
+  }
+
+  &_content {
+    transition-duration: 0.25s;
+    margin-top: -100%;
+  }
+
+  &[data-expanded='true'] {
+    > .expandable_container {
+      max-height: 150%;
+      opacity: 1;
+
+      > .expandable_content {
+        margin-top: 0;
+        opacity: 1;
+      }
+    }
+  }
+}

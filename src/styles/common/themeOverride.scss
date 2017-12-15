@@ -1,0 +1,229 @@
+@import '../base';
+
+/**************************************************
+* Warning!  The styles in this file are a bit arcane.
+* TODO: find a way to properly reskin the theme.
+**************************************************/
+
+/**************************************************
+* Fields
+**************************************************/
+[data-react-toolbox='input'] {
+  // Hide counter field
+  input {
+    +span {
+      +label {
+        +span {
+          display: none;
+        }
+      }
+    }
+
+    &[data-error='true'] {
+      +span {
+        +label {
+          +span {
+            display: block;
+
+            +span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+  label {
+    @include font_subhead--label;
+
+
+  }
+
+  input {
+    border-bottom: 2px solid $colour_grey;
+
+    &::placeholder {
+      color: $colour_grey;
+      font-style: italic;
+    }
+
+    &:disabled {
+      color: $colour_grey;
+      border-bottom: 2px solid $colour_grey;
+    }
+
+  }
+}
+
+/**************************************************
+* Button
+**************************************************/
+[data-react-toolbox='button'] {
+  background-color: $colour_blue_primary !important;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  height: auto;
+  font-size: 16px;
+  color: $colour_white !important;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  // margin: 0 !important;
+
+  &.secondary {
+    background-color: $colour_white !important;
+    color: $colour_blue_primary !important;
+    border: 1px solid $colour_blue_primary;
+
+    &:hover {
+      background-color: $colour_blue_primary !important;
+      color: $colour_white !important;
+    }
+  }
+}
+
+/**************************************************
+* Checkbox
+**************************************************/
+[data-react-toolbox='checkbox'] {
+  [data-react-toolbox='label'] {
+    font-size: 1em;
+  }
+
+  [data-react-toolbox='check'] {
+    background-color: $colour_blue_primary !important;
+    border-color: $colour_blue_primary !important;
+  }
+
+}
+
+/**************************************************
+* Dropdown
+**************************************************/
+
+[data-react-toolbox='dropdown'] {
+  margin-bottom: 24px;
+
+  [data-react-toolbox='input'] {
+    padding: 0;
+    position: relative;
+
+    &::after {
+      @include icon('arrow_drop_down');
+      border: 0;
+      color: $colour_blue_primary;
+      position: absolute;
+      font-size: 2em;
+      right: 24px;
+      top: 3px;
+
+    }
+  }
+}
+
+.dropdown-group {
+  &[data-disabled='true'] {
+    [data-react-toolbox='dropdown'] {
+      [data-react-toolbox='input'] {
+        &::after {
+          // color: $colour_grey;
+          color: transparent;
+        }
+      }
+    }
+  }
+}
+
+
+// Remove dropdown arrow
+[data-disabled='true'] {
+  [data-react-toolbox='dropdown'] {
+    [data-react-toolbox='input'] {
+      &::after {
+        border: 0;
+      }
+    }
+  }
+}
+
+.dropdown-group {
+  // align with other fields.
+  position: relative;
+  top: 8px;
+
+  label {
+    @include font_subhead--label-small;
+  }
+}
+
+/**************************************************
+* Radio
+**************************************************/
+[data-react-toolbox='radio-group'] {
+  // margin-bottom: 24px;
+}
+
+[data-react-toolbox='radio-button'] {
+  > span {
+    white-space: normal;
+  }
+}
+
+.radioGroup {
+  &.inline {
+    align-items: center;
+
+    [data-react-toolbox='radio-group'] {
+      margin-bottom: 0;
+
+      label {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/**************************************************
+* Buttons
+**************************************************/
+[data-react-toolbox='button'] {
+  &.primary {
+    background-color: $colour_blue_primary !important;
+  }
+
+  &[data-enabled='false'] {
+    background-color: $colour_grey_pinkish !important;
+  }
+}
+
+/**************************************************
+* Tabs
+**************************************************/
+[data-react-toolbox='tab'] {
+  color: $colour_grey_warm;
+}
+
+/**************************************************
+* Dialogue
+**************************************************/
+[data-react-toolbox='dialog'] {
+  &.genModal {
+    > section {
+      > * {
+        padding-right: $gutter;
+      }
+    }
+  }
+}
+
+/**************************************************
+* Date Picker
+**************************************************/
+[data-react-toolbox='date-picker'] {
+  [data-empty='true'] {
+    // color: transparent !important;
+    content: 'none';
+  }
+}

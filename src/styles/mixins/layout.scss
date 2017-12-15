@@ -1,0 +1,20 @@
+$mainHeaderHeight: 50px;
+$headerBarHeight: 56px;
+$stepBarHeight: 63px;
+$innerMargin: 24px;
+
+$gutter: 24px;
+
+@mixin gridRow($margin: $gutter) {
+  display: flex;
+
+  >* {
+    margin-right: $margin;
+    margin-left: 0;
+    width: 100%;
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+/**************************************************
+* Confirmed
+**************************************************/
+$colour_yellow: #ffdb18; // #Yellow
+$colour_black: #000; // #black
+$colour_white: #fff; // #white
+
+$colour_red: #d41919; // #d41919
+
+$colour_grey_warm: #878787; // #warm_grey
+$colour_grey_pinkish: #bbb; // #Background_gray
+$colour_grey: #c1c1c1; // #c1c1c1
+$colour_grey_background: #e6ecf2; // #Background_gray
+$colour_rule: #d3d3d3; // #d3d3d3
+
+$colour_blue_primary: #29b6f4; // #Primary_blue
+$colour_blue_secondary: #00478b; // #Secondary_blue
+$colour_blue_dark: #002b5b; // #002b5b
+
+$colour_green: #71c167;
+
+$colour_red--light: hsl(0, 100%, 95%);
+
+/**************************************************
+* Legacy
+**************************************************/
+$colour_white--transparent: hsla(0, 0%, 100%, 0.70);
+
+
+$colour_green--light: #6ac766;
+
+$colour_purple: #800080;
+$colour_black: #000;
+$colour_red: #C00;
+$colour_red--bright: #F00;
+
+
+$colour_button--disabled: $colour_grey_pinkish;
+$colour_button--default: $colour_blue_primary;
+
+$colour_button--default-hover: lighten($colour_button--default, 10);
+
+
+$colour_error: $colour_red;
+
+$colour_text: $colour_black;
+
+
+
+// Icon Colours
+$productColour--savings: #00baf5;
+$productColour--chequing: #6ac766;
+$productColour--termDeposit: #ff8a01;

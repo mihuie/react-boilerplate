@@ -1,0 +1,439 @@
+$warm-grey: #878787;
+$blue-text: #00478b;
+$marina-blue: #002b5b;
+$azure: #29b6f4;
+
+
+[class^='theme--tabs'] *:focus {
+  outline: none;
+}
+
+%modal-height-large {
+  height: auto !important;
+  max-height: 90% !important;
+}
+
+.collapsibleContainer{
+  display: flex;
+  justify-content: center;
+  background-color: #e6ecf2;
+  .collapsibles {
+    display: flex;
+    background-color: #e6ecf2;
+    padding: 20px 40px;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+
+.footerContainer{
+  display: flex;
+  width: 100%
+}
+
+[class^='theme--dialog'] {
+  @extend %modal-height-large;
+}
+
+.faqModal {
+  width: 550px !important;
+  height: 100%;
+
+  .modalButton{
+    margin: 10px;
+  }
+
+  .closeButton {
+    color: #777;
+    font: 18px/100% arial, sans-serif;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    width: 30px;
+    height: 30px;
+    content: 'x';
+  }
+
+  [class^='theme--navigationContainer'] {
+    display: block;
+  }
+  [class^='theme--title'] {
+    color: $blue-text !important;
+    margin-bottom: 10px !important;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  [class^='theme--body'] {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 650px !important;
+  }
+
+  [class^='theme--hint'] {
+    font-style: italic;
+  }
+}
+// overlay adjustment for all screens
+
+[class^='theme--overlay'] {
+  opacity: 0.8 !important;
+  background-color: rgb(238, 238, 238) !important;
+}
+
+.main_container {
+  width: 100%;
+  max-width: 1026px;
+  align-self: center;
+
+  .flex-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex-item {
+    margin: 10px;
+  }
+
+  .applyStepsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    margin-bottom: 30px;
+
+    // .sf_container {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-around;
+    //   margin-bottom: 30px;
+    // }
+
+    .applySectionBtn {
+      text-transform: none;
+      align-self: center;
+      height: 55px;
+      width: 348px;
+      padding: 10px;
+    }
+  }
+
+  .cta_link_section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .serviceFeaturesTitle {
+    align-self: flex-start;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    // line-height: 1.33;
+    text-align: left;
+    color: $blue-text;
+    margin-bottom: 40px;
+  }
+
+  // .serviceFeaturesSummary {
+  //   font-family: Roboto;
+  //   font-size: 20px;
+  //   line-height: 1.6;
+  //   text-align: left;
+  //   color: black;
+  // }
+}
+
+
+.background-blue {
+  background-color: $marina-blue;
+}
+
+.background-light-blue {
+  background-color: $blue-text;
+}
+
+.footerBox {
+
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 !important;
+  width: 50%;
+
+  .footerBoxTitle {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: #ffdf19;
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+  }
+
+  .footerBoxContent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 30px;
+
+    .footerBoxLink {
+      color: #29b6f4;
+      text-decoration: underline;
+    }
+
+    .inactive {
+      color: #878787;
+    }
+  }
+
+  .footerBoxImg {
+    background-image: url('/images/checklist.png');
+    background-size: cover;
+    width: 125px;
+    height: 117px;
+  }
+
+  .footerBoxSubtitle {
+    color: white;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+    white-space: nowrap;
+  }
+
+  .footerBoxButton {
+    width: 175px !important;
+    height: 50px;
+    align-self: center;
+    margin-bottom: 20px;
+    text-transform: none;
+    font-size: 14px;
+  }
+
+  .href-btn {
+    padding-top: 6px;
+  }
+
+  .goalImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    flex-grow: 1;
+    min-height: 326px;
+
+    .imageTextContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .imageText {
+        color: white;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+
+    .goalImageLeft {
+      background-image: url('/images/vacation-copy.png');
+      background-size: cover;
+      flex-grow: 1;
+    }
+
+    .goalImageCenter {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      flex-grow: 1;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      .goalImageCenterTop {
+        background-image: url('/images/tuition-and-school-fees.png');
+        background-size: cover;
+        flex-grow: 1;
+        margin-bottom: 5px;
+      }
+
+      .goalImageCenterBottom {
+        background-image: url('/images/debt-consolidation.png');
+        background-size: cover;
+        flex-grow: 1;
+        margin-top: 5px;
+      }
+    }
+
+    .goalImageRight {
+      background-image: url('/images/home-improvement.png');
+      background-size: cover;
+      flex-grow: 1;
+    }
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  color: red;
+}
+
+.modalButton {
+  display: flex;
+  justify-content: flex-end;
+
+  Button,
+  a {
+    margin-left: 10px;
+    text-transform: none;
+  }
+
+  .btn-box {
+    color: $colour_blue_primary !important;
+    border: 1px solid $colour_blue_primary;
+  }
+}
+
+@media only screen and (max-width: 1281px) {
+  /* hi-res laptops and desktops */
+  // .sf_container {
+  //   flex-wrap: nowrap;
+  // }
+
+  .footerBox .footerBoxButton {
+    width: 340px;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  /* big landscape tablets, laptops, and desktops */
+
+  // .sf_container {
+  //   flex-wrap: nowrap;
+  // }
+
+  .footerBox .footerBoxButton {
+    width: 340px;
+  }
+}
+
+
+@media only screen and (max-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  
+  .main_container {
+    width: 100%;
+
+    .applyStepsContainer {
+      display: flex;
+      flex-direction: column; // justify-content: center;
+      // align-content: space-between;
+      margin-bottom: 0px;
+      height: 330px;
+    }
+
+    .serviceFeaturesTitle {
+      align-self: center;
+      font-size: 24px;
+      font-weight: bold; // line-height: 1.33;
+      text-align: center;
+    }
+  }
+
+  .footerContainer {
+    flex-direction: column;
+
+  .footerBoxSubtitle {
+    white-space: pre-wrap;
+  }
+
+  }
+
+  .footerBox {
+    width: auto;
+    padding-bottom: 35px;
+    padding-top: 35px;
+  }
+
+  .collapsibleContainer  .collapsibles {
+    display: flex;
+    background-color: unset;
+    padding: 0;
+    width: 100%;
+    // justify-content: center;
+  }
+
+  
+ 
+}
+
+
+@media only screen and (max-width: 601px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  // .sf_container {
+  //   flex-wrap: wrap;
+  // }
+
+  .faqModal {
+    min-width: 90%;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 481px) {
+  /* smartphones, Android phones, landscape iPhone */
+  .main_container {
+    width: 100%;
+
+    .serviceFeaturesTitle {
+      font-size: 20px;
+    }
+  }
+
+  .footerBox .footerBoxButton {
+    width: 100%;
+  }
+
+  // .sf_container {
+  //   flex-wrap: wrap;
+  // }
+
+  [class^='theme--tab'] {
+    padding: 0px !important;
+  }
+
+  .commonQuestionContainer {
+    padding: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  .main_container {
+    width: 100%;
+  }
+
+  .footerBox .footerBoxButton {
+    width: auto;
+  }
+
+  // .sf_container {
+  //   flex-wrap: wrap;
+  // }
+
+}

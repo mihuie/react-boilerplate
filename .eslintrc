@@ -1,0 +1,71 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2,
+            {"SwitchCase": 1}
+        ],
+        "linebreak-style": [
+            0,
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            2,
+            "always"
+         ]
+        ,
+        "no-unused-vars": [
+          1,
+          {"vars": "all", "args": "after-used"}
+        ],
+        "no-console": [
+          1
+        ],
+        "react/jsx-uses-vars": [2]
+    },
+  "globals": {
+      "__dirname": false,
+      "describe": false,
+      "it": false,
+      "before": false,
+      "after": false,
+      "beforeEach": false,
+      "afterEach": false,
+      "process": false,
+      "__DEV__": false,
+      "ON_TEST": false,
+      "AUTH0_CLIENT_ID": false,
+      "AUTH0_DOMAIN": false,
+      "debugger": false,
+      "selenium": false,
+      "helpers": false,
+      "page": false,
+      "driver": false,
+      "expect": false,
+      "until": false,
+      "by": false,
+      "app": false
+    }
+}

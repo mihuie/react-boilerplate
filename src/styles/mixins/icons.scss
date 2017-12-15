@@ -1,0 +1,41 @@
+// @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@mixin iconHolder {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  position: relative;
+}
+
+@mixin icon($code) {
+  font-family: 'Material Icons';
+  content: $code;
+  display: block;
+  font-size: 25px;
+  text-transform: none;
+};
+
+@mixin icon_inline($code) {
+  font-family: 'Material Icons';
+  content: $code;
+  font-size: 25px;
+  text-transform: none;
+};
+
+$dropdownIconSize: 23px;
+@mixin dropdownIcon {
+  @include icon('keyboard_arrow_down');
+  font-size: $dropdownIconSize;
+  position: absolute;
+  right: -22px;
+  top: -1px;
+}
+
+@mixin dropdownIcon--expanded {
+  @include icon('keyboard_arrow_up');
+  font-size: $dropdownIconSize;
+  position: absolute;
+  right: -22px;
+  top: -1px;
+
+}

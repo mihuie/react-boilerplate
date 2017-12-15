@@ -1,0 +1,93 @@
+@mixin font_default {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin font_default--light {
+  @include font_default;
+  font-weight: 300;
+}
+
+@mixin font_default--normal {
+  @include font_default;
+  font-weight: 400;
+}
+
+@mixin font_default--medium {
+  @include font_default;
+  font-weight: 500;
+}
+
+@mixin font_default--bold {
+  @include font_default;
+  font-weight: 700;
+}
+
+@mixin font_caption {
+  @include font_default--normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $colour_black;
+}
+
+@mixin text_light {
+  @include font_default--light;
+}
+
+@mixin text_title {
+  @include font_default--bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: $colour_blue_secondary;
+}
+
+@mixin text_headline {
+  @include font_default--bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: $colour_blue_secondary;
+}
+
+@mixin text_medium {
+  @include font_default--normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin font_large {
+  @include font_default--normal;
+  font-size: 20px;
+  line-height: 32px;
+  color: $colour_black;
+}
+
+@mixin font_subhead {
+  @include font_default--medium;
+  font-size: 16px;
+  line-height: 24px;
+  color: $colour_blue_secondary;
+  // color: $colour_black;
+}
+
+@mixin font_subhead--label {
+  @include font_subhead;
+  color: $colour_blue_secondary;
+  font-weight: 700;
+  line-height: 1em;
+
+  span {
+    color: $colour_red--bright;
+    font-size: 1.5em;
+    position: relative;
+    top: 3px;
+    left: -2px;
+  }
+}
+
+@mixin font_subhead--label-small {
+  @include font_subhead--label;
+  font-size: calc(1.2 * 10px);
+}
+
+@mixin font_icon {
+  font-family: 'Material Icons';
+}

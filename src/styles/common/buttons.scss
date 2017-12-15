@@ -1,0 +1,188 @@
+@import '../base';
+
+.btn {
+  @include font_default--medium;
+
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  color: $colour_white !important;
+  width: 100%;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &-default {
+    text-transform: uppercase;
+    background-color: $colour_button--default;
+
+    &[data-disabled='true'] {
+      background-color: $colour_button--disabled;
+    }
+
+    // TODO: Switch to use data-disabled attribute
+    &-disabled {
+      background-color: $colour_button--disabled !important;
+
+      &:hover {
+        background-color: $colour_button--disabled !important;
+      }
+
+    }
+
+    &:hover {
+      background-color: $colour_button--default-hover;
+      text-decoration: none;
+    }
+  }
+
+  &-medium {
+    padding: 5px 0;
+    height: auto;
+    font-size: 1em;
+  }
+
+  &-large {
+    padding: 12px 0;
+    height: auto;
+    font-size: 1em;
+  }
+
+  &-disabled {
+    background-color: $colour_button--disabled !important;
+  }
+
+  &-center {
+    display: block;
+    width: 40%;
+    margin: auto;
+  }
+
+  &_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  &-text {
+    // border: 1px solid red;
+    color: $colour_black !important;
+    border-bottom: 2px solid $colour_black;
+    padding: 0;
+    height: auto;
+    line-height: 1.25em;
+    cursor: pointer;
+  }
+
+  &-link {
+    text-transform: none;
+    text-decoration: underline;
+    color: $colour_blue_secondary !important;
+    padding: 0;
+    height: auto;
+    line-height: 1.25em;
+    cursor: pointer;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &-info {
+    text-transform: none;
+    text-decoration: underline;
+    color: $colour_blue_secondary !important;
+    padding: 0;
+    height: auto;
+    line-height: 1.25em;
+    cursor: pointer;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+
+    /*
+    &::before {
+      @include icon('info');
+      margin-right: 5px;
+    }
+    */
+
+  }
+
+  &-box {
+    @include font_default--bold;
+    text-transform: none;
+    padding: 14px;
+    height: auto;
+    line-height: 1.25em;
+    cursor: pointer;
+    background-color: transparent !important;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+
+  &-close-x {
+    width: 50px !important;
+    background-color: transparent !important;
+    color: $colour_grey !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin-right: 0 !important;
+
+    &::after {
+      // position: absolute;
+      @include icon('close')
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+
+  > span {
+    @include font_default--bold;
+    color: $colour_blue_primary;
+    text-decoration: underline;
+  }
+
+  &-block {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  &-external {
+    @include iconHolder;
+
+    &::after {
+      @include icon('keyboard_arrow_right');
+      color: $colour_blue_primary;
+    }
+  }
+}
+
+[data-disabled='true'] {
+  background-color: $colour_button--disabled !important;
+}
+
+/**************************************************
+* Button Row
+**************************************************/
+.button_row {
+  padding: $gutter;
+  text-align: right;
+
+  button,
+  a {
+    width: 40%;
+  }
+}

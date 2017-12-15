@@ -1,0 +1,17 @@
+.idea/
+yarn.lock
+release
+node_modules
+notes
+test/reports
+test/logs
+*.log
+*.bk.js
+.vscode/
+jsconfig.json
+.nyc_output
+coverage
+.idea/
+package-lock.json
+Gemfile.lock
+.yarnclean
